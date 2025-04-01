@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Calculator</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+
+            <div class="calculator">
+                <form method="POST" action="/">
+                    <input type="hidden" name="expression" value="{{ expression }}">
+                    <input type="text" class="display" value="{{ expression }}" readonly>                
+
+                <div class="buttons">
+                    <button type="submit" name="button" value="7">7</button>
+                    <button type="submit" name="button" value="8">8</button>
+                    <button type="submit" name="button" value="9">9</button>
+                    <button class="op" type="submit" name="button" value="/">÷</button>
+                    
+
+                    <button type="submit" name="button" value="4">4</button>
+                    <button type="submit" name="button" value="5">5</button>
+                    <button type="submit" name="button" value="6">6</button>
+                    <button class="op" type="submit" name="button" value="*">×</button>
+                    
+                    <button type="submit" name="button" value="1">1</button>
+                    <button type="submit" name="button" value="2">2</button>
+                    <button type="submit" name="button" value="3">3</button>
+                    <button class="op" type="submit" name="button" value="-">-</button>
+                    
+                    <button type="submit" name="button" value="0">0</button>
+                    <button type="submit" name="button" value=".">.</button>
+                    <button class="c" type="submit" name="button" value="C">C</button>
+                    <button class="op" type="submit" name="button" value="+">+</button>
+
+                    <button class="op" type="submit" name="button" value="=" style="grid-column: span 4;">=</button>
+                </div>
+            </form>
+        </div>
+
+    </body>
+
+    <style>
+        .calculator {
+            max-width: 400px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            text-align: center;
+            background: #B0A98D;
+            padding:100px 20px 50px 20px;
+            border-radius: 10px;
+            box-shadow:
+                2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+                6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+                12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+                22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+                41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
+                100px 100px 80px rgba(0, 0, 0, 0.07);
+                border-top: solid 40px rgb(35, 35, 35);
+                border-bottom: solid 20px rgb(35, 35, 35);
+                border-left: solid 5px rgb(35, 35, 35);
+                border-right: solid 5px rgb(35, 35, 35);
+        }
+        .display {
+            width: 90%;
+            height: 100px;
+            margin-bottom: 30px;
+            font-family: "Orbitron", sans-serif;
+            font-size: 2em;
+            font-weight: 500;
+            text-align: right;
+            padding-right: 10px;
+            background: #a0ad9d;
+            position: relative;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        button {
+            width: 100%;
+            padding: 15px;
+            background: #f8f3e0;
+            font-size: 1.3em;
+            font-family: "Inter", sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        .op {
+            background: #5882bd;
+            font-size: 2em;
+        }
+        .c {
+            background: #f74535;
+            font-size: 1.5em;
+        }
+    </style>
+
+</html>
